@@ -11,4 +11,4 @@ $ node src/index.js
 ```
 
 ## Documentation
-Coming soon!
+Coming soon! View the scripts inside the `scripts` folder for various examples of how to work with the library for now.
