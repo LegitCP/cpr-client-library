@@ -4,8 +4,8 @@ const logger = require('../src/utils/logger');
 // Credits: https://github.com/wesbos/waait
 const wait = (amount = 0) => new Promise(resolve => setTimeout(resolve, amount));
 
-const addFreeItems = async (penguin, delay, freeOnly) => {
-  logger.info('Adding all free items...');
+const addItems = async (penguin, delay, freeOnly) => {
+  logger.info('Adding items...');
 
   const { item } = penguin.connection.crumbs;
   const items = freeOnly ? Object.entries(item).filter(([id, crumb]) => crumb.cost !== 0) : Object.entries(item);
@@ -16,7 +16,7 @@ const addFreeItems = async (penguin, delay, freeOnly) => {
     await wait(delay);
   }
 
-  logger.info('Successfully added all items to your CPR HTML5 account. Enjoy!');
+  logger.info(`Successfully added all ${freeOnly ? 'free' : ''} items to your CPR HTML5 account. Enjoy!`);
   process.exit();
 };
 
@@ -36,7 +36,7 @@ const setupCallbacks = async (myPenguin, obj) => {
     logger.info(`Successfully joined room '${room[roomId].english}' at coords '${x}:${y}'`);
 
     logger.info('Starting item adder...');
-    await addFreeItems(myPenguin, obj.delay, obj.freeOnly);
+    await addItems(myPenguin, obj.delay, obj.freeOnly);
   });
 
   myPenguin.connection.on(ActionType.INVENTORY.BUY_INVENTORY, (packet) => {
