@@ -14,7 +14,7 @@ exports.handleAddBuddy = (packet, connection) => {
       id: parseInt(packet.params[0]),
       swid: packet.params[1],
       unapprovedName: packet.params[2],
-      //TODO: packet.params[3] --- unsure of last argument
+      isMascot: packet.params[3]
     }
   };
 
