@@ -2,7 +2,7 @@
 Client library for Club Penguin Rewritten's HTML5 client.
 
 ## Installation
-To run the sample program, make sure you have the latest LTS version of Node.js installed on your operating system.
+Make sure you have the latest LTS version of Node.js installed on your operating system. Edit `src/index.js` with the appropriate configuration options and run the program.
 ```
 $ git clone https://github.com/LegitCP/cpr-client-library
 $ cd cpr-client-library
