@@ -10,7 +10,7 @@ exports.handleGetCrumbs = (packet, connection) => {
   };
 
   if (config.debug) {
-    logger.incoming(`[Crumbs Received] Successfully parsed ${crumbObj.type} crumbs`);
+    logger.debug(`[Crumbs Received] Successfully parsed ${crumbObj.type} crumbs`);
   }
 
   connection.crumbs[crumbObj.type] = JSON.parse(crumbObj.crumbs);

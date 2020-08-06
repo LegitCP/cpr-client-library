@@ -89,7 +89,7 @@ module.exports = class Connection {
   handlePacket(packetObj) {
     const [action, type] = packetObj.action.split(':');
     (config.debug && type !== 'get_crumbs') ?
-      logger.incoming(`[Packet Received] ${packetObj}`) : null;
+      logger.incoming(packetObj) : null;
     if (!this.listeners[action] || !this.listeners[action][type]) {
       logger.error(`Failed to parse packet of type '${action}:${type}'`);
       return;
@@ -99,7 +99,7 @@ module.exports = class Connection {
 
   sendPacket(action, params = []) {
     const packet = {action, params};
-    config.debug ? logger.outgoing(`[Packet Sent] ${packet}`) : null;
+    config.debug ? logger.outgoing(packet) : null;
     this.socket.emit('p', packet);
   }
 
