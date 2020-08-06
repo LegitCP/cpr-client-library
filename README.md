@@ -11,4 +11,4 @@ $ node src/index.js
 ```
 
 ## Documentation
-Coming soon! See `scripts/itemAdder.js` for example of how to work with the library for now.
+Coming soon! View the scripts inside the `scripts` folder for various examples of how to work with the library for now.
