@@ -7,7 +7,7 @@ const addItems = async (penguin, delay, freeOnly) => {
   logger.info('Adding items...');
 
   const { item } = penguin.connection.crumbs;
-  const items = freeOnly ? Object.entries(item).filter(([id, crumb]) => crumb.cost !== 0) : Object.entries(item);
+  const items = freeOnly ? Object.entries(item).filter(([id, crumb]) => crumb.cost === 0) : Object.entries(item);
 
   for (const [id, crumb] of items) {
     logger.info(`Attempting to add item ${crumb.english} with cost of ${crumb.cost}...`);
