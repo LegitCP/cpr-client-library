@@ -1,5 +1,4 @@
 const Penguin = require('../src/networking/penguin');
-const logger = require('../src/utils/logger');
 
 // Credits: https://github.com/wesbos/waait
 const wait = (amount = 0) => new Promise(resolve => setTimeout(resolve, amount));
